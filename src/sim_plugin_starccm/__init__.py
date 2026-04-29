@@ -10,4 +10,13 @@ from .driver import StarccmDriver
 
 skills_dir = files(__name__) / "_skills"
 
-__all__ = ["StarccmDriver", "skills_dir"]
+
+plugin_info = {
+    "name": "starccm",
+    "summary": "Driver plugin for sim-cli.",
+    "homepage": "https://github.com/svd-ai-lab/sim-plugin-starccm",
+    "license_class": "commercial",
+    "solver_name": "starccm",
+}
+
+__all__ = ["StarccmDriver", "skills_dir", "plugin_info"]

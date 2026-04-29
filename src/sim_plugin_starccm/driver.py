@@ -370,3 +370,12 @@ class StarccmDriver:
             timestamp=datetime.now(timezone.utc).isoformat(),
             errors=errors,
         )
+
+    def launch(self, **kwargs) -> dict:
+        raise NotImplementedError("StarCCM driver does not support persistent sessions")
+
+    def run(self, code: str, label: str = "") -> dict:
+        raise NotImplementedError("StarCCM driver does not support persistent sessions")
+
+    def disconnect(self) -> dict:
+        return {"ok": True, "disconnected": True}

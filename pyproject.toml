@@ -24,12 +24,13 @@ classifiers = [
 # executed through the `starccm+ -batch` CLI, which the user must install
 # and license separately. No vendor SDK dependency.
 dependencies = [
-    "sim-runtime @ git+https://github.com/svd-ai-lab/sim-cli@main",
+    "sim-cli-core>=0.3",
 ]
 
 [project.optional-dependencies]
 test = [
     "pytest>=7",
+    "build>=1.0",
 ]
 
 [project.entry-points."sim.drivers"]
@@ -38,15 +39,18 @@ starccm = "sim_plugin_starccm:StarccmDriver"
 [project.entry-points."sim.skills"]
 starccm = "sim_plugin_starccm:skills_dir"
 
+[project.entry-points."sim.plugins"]
+starccm = "sim_plugin_starccm:plugin_info"
+
 [project.urls]
 Homepage = "https://github.com/svd-ai-lab/sim-plugin-starccm"
 Issues = "https://github.com/svd-ai-lab/sim-plugin-starccm/issues"
 
-[tool.hatch.metadata]
-# Required because `sim-runtime` is pinned to a git+https URL — sim-cli is
-# distributed via GitHub, not PyPI. See sim-proj memory: plugin distribution
-# is GitHub-only.
-allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/sim_plugin_starccm"]
+
+[tool.pytest.ini_options]
+markers = [
+  "integration: tests that build wheels or touch external tooling",
+]

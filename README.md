@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **This repository has moved.** `sim-plugin-starccm` is now developed in [svd-ai-lab/sim-cli](https://github.com/svd-ai-lab/sim-cli/tree/main/plugins/starccm) under `plugins/starccm`. This repository is archived and read-only; please open issues and pull requests in sim-cli.
+>
+> Install: `uv add sim-cli-core "sim-plugin-starccm @ git+https://github.com/svd-ai-lab/sim-cli.git#subdirectory=plugins/starccm"`
+
 # sim-plugin-starccm
 
 [Simcenter STAR-CCM+](https://plm.sw.siemens.com/en-US/simcenter/fluids-thermal-simulation/star-ccm/) driver for [sim-cli](https://github.com/svd-ai-lab/sim-cli), distributed as an out-of-tree plugin via Python `entry_points`.
